@@ -1,19 +1,28 @@
 package main
 
 import (
-	"fmt"
-	"strings"
+    "fmt"
+    "strings"
 )
 
-func sorting(arr []string) {
-    for i := 0; i < len(arr); i++ {
-        tmp := arr[i]
-        j := i
-        for j > 0 && arr[j-1] > tmp {
-            arr[j] = arr[j-1]
-            j--
+func bubble (arr []string) {
+    a := strings.Join(arr, " ")
+    fmt.Println(a)
+    for {
+        disortir := true
+        for i := 0; i < len(arr)-1; i++ {
+            if arr[i] > arr[i+1] {
+                tmp := arr[i]
+                arr[i] = arr[i+1]
+                arr[i+1] = tmp
+                disortir = false
+            }
         }
-        arr[j] = tmp
+        if disortir == true {
+            break
+        }
+        b := strings.Join(arr, " ")
+        fmt.Println(b)
     }
 }
 
@@ -23,10 +32,5 @@ func main () {
     fmt.Print("number : ")
     fmt.Scan(&n)
     arr := strings.Split(n, ",")
-    fmt.Print("Isi Element Array: ", arr, "\n", "Hasil Pengurutan: ")
-    sorting(arr)
-    for i := 0; i < len(arr); i++ {
-        fmt.Print(arr[i], " ")
-    }
-    fmt.Print("\n")
+    bubble(arr)
 }
