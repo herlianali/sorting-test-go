@@ -2,10 +2,10 @@ package main
 
 import (
 	"fmt"
-	// "strings"
+	"strings"
 )
 
-func sorting(arr []int) {
+func sorting(arr []string) {
     for i := 0; i < len(arr); i++ {
         tmp := arr[i]
         j := i
@@ -18,17 +18,15 @@ func sorting(arr []int) {
 }
 
 func main () {
- //    var number string
-	// fmt.Scanln(&number)
- //    arr := []{number}
-	// s := strings.Split(number, ",")
- //    // sorting()
-	// fmt.Println(s, arr)
-    arr := []int{1, 4, 5, 2}
-    fmt.Print("Isi Element Array: ", arr, "\n", "Hasil Pengurutan: [ ")
+    var n string
+    fmt.Println("Masukan nomer yang akan di urutkan dengan koma(,) sebagai pemisah")
+    fmt.Print("number : ")
+    fmt.Scan(&n)
+    arr := strings.Split(n, ",")
+    fmt.Print("Isi Element Array: ", arr, "\n", "Hasil Pengurutan: ")
     sorting(arr)
     for i := 0; i < len(arr); i++ {
         fmt.Print(arr[i], " ")
     }
-    fmt.Print("]\n")
+    fmt.Print("\n")
 }
